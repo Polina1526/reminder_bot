@@ -1,4 +1,5 @@
-Описание моей работы смотри в конце README.md
+**Описание моей работы смотри в конце README.md**
+
 # Reminderbot
 
 The `reminderbot` example demonstrates how your bot can respond to external events or reminders.
