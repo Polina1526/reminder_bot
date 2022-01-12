@@ -1,0 +1,90 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- EXTERNAL_dry_plant:
+    use_entities: true
+- EXTERNAL_reminder:
+    use_entities: true
+- EXT_reminder:
+    use_entities: true
+- affirm:
+    use_entities: true
+- ask_call_reminder:
+    use_entities: true
+- ask_forget_reminders:
+    use_entities: true
+- ask_id:
+    use_entities: true
+- ask_remind_call:
+    use_entities: true
+- ask_usual_reminder:
+    use_entities: true
+- bye:
+    use_entities: true
+- greet:
+    use_entities: true
+- out_of_scope:
+    use_entities: true
+- reject:
+    use_entities: true
+entities:
+- person
+- txt_reminder
+- timer
+- plant
+slots:
+  person:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  txt_reminder:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  timer:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+responses:
+  utter_what_can_do:
+  - text: What can I do for you?
+  - text: How can I help you?
+  utter_goodbye:
+  - text: Bye!
+  - text: Goodbye!
+  - text: Glad to see you next time!
+  utter_greet:
+  - text: Hi! What can I do for you?
+  - text: Hello! How can I help you?
+  - text: Glad to see you! How can I help you?
+  - text: Hi! How can I help you?
+  - text: Hello! What can I do for you?
+  - text: Glad to see you! What can I do for you?
+  utter_default_fallback:
+  - text: I'm sorry, I didn't quite understand that. Could you rephrase?
+  - text: Sorry, I didn't understand that. Could you rephrase, please?
+  - text: I didn't catch that, rephrase, please
+  - text: Could you rephrase? I didn't catch your meaning.
+actions:
+- action_set_call_reminder
+- action_set_usual_reminder
+- action_forget_reminders
+- action_react_to_reminder
+- action_tell_id
+- action_warn_dry
+- action_default_fallback
+- usual_reminder_form
+- call_reminder_form
+forms:
+  usual_reminder_form:
+    required_slots: {}
+  call_reminder_form:
+    required_slots: {}
+e2e_actions: []

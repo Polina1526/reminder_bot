@@ -1,0 +1,173 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - good morning
+    - good evening
+    - hey there
+- intent: bye
+  examples: |
+    - bye
+    - good bye
+    - ciao
+    - see you
+    - see ya
+    - goodbye
+- intent: affirm
+  examples: |
+    - yes
+    - indeed
+    - of course
+    - yes, of course
+    - that sounds good
+- intent: reject
+  examples: |
+    - no
+    - no, thanks
+    - nope
+    - not
+    - don't
+- intent: ask_remind_call
+  examples: |
+    - remind me to call [John](person) in [5](timer) minutes
+    - remind me to call [Lis](person)
+    - remind me to call [Albert](person) in [1](timer) minut
+    - remind me to call [Susan](person)
+    - later I have to call [Alan](person)
+    - later I have to call [Jessie](person)
+    - later I have to call [Alex](person) in [10](timer) minutes
+    - I have to call [Jessie](person)
+    - I have to call [Jessie](person) in [6](timer) minutes, remind me
+    - I have to call [Jessie](person), remind me, please
+    - I need to call [Albert](person)
+    - I need to call [Albert](person), remind me
+    - I need to call [Albert](person) in [1](timer) minut, remind me, please
+    - I want to call [Tanja](person) later, set the reminder
+    - I want to call [Tanja](person) later, remind me
+    - I want to call [Tanja](person) later, please, remind me
+    - later I have to call [Alan](person), please, remind me
+    - later I have to call [Jessie](person), please, remind me
+    - later I have to call [Alex](person), please, remind me
+    - Please, remind me to call [Vova](person) in [2](timer) minutes
+    - please remind me to call [Tanja](person)
+    - I must not forget to call [Santa](person)
+    - I must not forget to call [Daksh](person) in [7](timer) minutes
+    - I must not forget to call [Juste](person)
+    - I must not forget to call [Santa](person) in [4](timer) minutes, please, remind me
+    - I must not forget to call [Daksh](person), please, remind me
+    - I must not forget to call [Juste](person), please, remind me
+    - Could you remind me to call to [Alex](person)
+    - Could you remind me to call to [Nastay](person) in [9](timer) minutes
+    - Could you, please, remind me to call to [Egor](person)
+    - Set a reminder to call [Alice](person)
+    - Set a reminder to call [Katay](person), please
+    - Please, set a reminder to call [Kate](person)
+    - Please, set a reminder to call [Kate](person) in [1](timer) minut
+    - I need to have a conversation with [Andrey](person)
+    - I need to have a conversation with [Andrey](person), please, set the reminder
+    - I need to have a conversation with [Andrey](person) in [1](timer) minut, set the reminder
+    - I plan to have a conversation with [Yakov](person)
+    - I would like to call [Yakov](person)
+    - I would like to call [Masha](person) in [5](timer) minutes
+    - I would like to call [Masha](person), remind me, please
+    - I would like to call [Yakov](person), set the reminder
+    - I would like to have a conversation with [Yakov](person)
+- intent: ask_usual_reminder
+  examples: |
+    - remind me to [do the homework](txt_reminder) in [5](timer) minutes
+    - remind me to [check documents](txt_reminder)
+    - remind me to [pack a suitcase](txt_reminder)
+    - remind me to [prepare a presentation](txt_reminder)
+    - later I have to [take a walk with the dog](txt_reminder) in [2](timer) minutes
+    - later I have to [change the light bulb](txt_reminder)
+    - later I have to [go to parent meeting](txt_reminder)
+    - I have to [buy a gift](txt_reminder) in [1](timer) minut
+    - I have to [visit the clinic](txt_reminder), remind me
+    - I have to [go to the hairdresser](txt_reminder), remind me, please
+    - I need to [vaccinate](txt_reminder) in [1](timer) minut
+    - I need to [update software on your phone](txt_reminder) in [1](timer) minut, remind me
+    - I need to [meet mom from the airport](txt_reminder), remind me, please
+    - I want to [meet Katya after her work](txt_reminder) later, set the reminder
+    - I want to [feed the cat](txt_reminder) later, remind me
+    - I want to [make a pie](txt_reminder) later, please, remind me
+    - later I have to [buy a license](txt_reminder), please, remind me
+    - later I have to [fix the car](txt_reminder) in [10](timer) minutes, please, remind me
+    - later I have to [hang a garland](txt_reminder), please, remind me
+    - Please, remind me to [connect pool cleaning](txt_reminder)
+    - please remind me to [sew a toy](txt_reminder) in [7](timer) minutes
+    - I must not forget to [get the pie out of the oven](txt_reminder)
+    - I must not forget to [watch stream on YouTube](txt_reminder)
+    - I must not forget to [cook porridge](txt_reminder) in [1](timer) minut
+    - I must not forget to [go to the vet clinic with a dog](txt_reminder) in [4](timer) minutes, please, remind me
+    - I must not forget to [see a movie](txt_reminder), please, remind me
+    - I must not forget to [fix the closet](txt_reminder), please, remind me
+    - Could you remind me to [take a walk with Vova](txt_reminder)
+    - Could you remind me to [change the wallpaper on the phone screen](txt_reminder)
+    - Could you, please, remind me to [go to the airport](txt_reminder)
+    - Set a reminder to [feed the fish](txt_reminder)
+    - Set a reminder to [turn off the kettle](txt_reminder), please
+    - Please, set a reminder to [go to the tutor](txt_reminder) in [8](timer) minutes
+    - I need to [draw a drawing](txt_reminder) in [3](timer) minutes
+    - I need to [take a passport photo](txt_reminder), please, set the reminder
+    - I need to [go to the pool](txt_reminder) in [9](timer) minutes, set the reminder
+    - I plan to [iron a jacket](txt_reminder)
+    - I would like to [take a walk with a friend](txt_reminder)
+    - I would like to [do a workout](txt_reminder), remind me, please
+    - I would like to [visit Lena](txt_reminder), set the reminder
+    - I would like to [go to a cafe](txt_reminder) in [20](timer) minutes
+- intent: ask_id
+  examples: |
+    - what's the conversation id?
+    - id
+    - What is the ID of this conversation?
+    - How do I send a POST request to this conversation?
+- intent: ask_forget_reminders
+  examples: |
+    - forget about it
+    - don't remind me!
+    - Forget about the reminder
+    - Forget about the reminder, please
+    - Forget about all the reminders
+    - do not remind me
+    - do not remind me, please
+    - cancel the reminder
+    - cancel all reminders please
+    - Forget reminding me
+    - Forget reminding me!
+- intent: out_of_scope
+  examples: |
+    - please help with my ice cream it's dripping
+    - no wait go back i want a dripping ice cream but a cone that catches it so you can drink the ice cream later
+    - i want a non dripping ice cream
+    - someone call the police i think the bot died
+    - show me a picture of a chicken
+    - neither
+    - I want french cuisine
+    - i am hungry
+    - restaurant
+    - can i be shown a gluten free restaurant
+    - i don't care!!!!
+    - i do not care how are you
+    - again?
+    - oh wait i gave you my work email address can i change it?
+    - hang on let me find it
+    - stop it, i do not care!!!
+    - how come?
+    - I changed my mind
+    - what?
+    - did i break you
+    - that link doesn't work!
+    - you already have that
+    - this is a really frustrating experience
+    - no stop
+    - give me food
+    - i want food
+    - Can I ask you questions first?
+    - is it a wasteland full of broken robot parts?
+    - can we keep chatting?
+    - talk to me
+    - who is your favourite robot?
+    - can you help me to build a bot

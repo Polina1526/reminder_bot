@@ -1,0 +1,32 @@
+language: en
+pipeline:
+- name: WhitespaceTokenizer
+- name: RegexFeaturizer
+- name: LexicalSyntacticFeaturizer
+- name: CountVectorsFeaturizer
+- name: CountVectorsFeaturizer
+  analyzer: char_wb
+  min_ngram: 1
+  max_ngram: 4
+- name: DIETClassifier
+  epochs: 100
+- name: SpacyNLP
+  model: en_core_web_md
+- name: SpacyEntityExtractor
+- name: EntitySynonymMapper
+policies:
+  - name: RulePolicy
+  - name: MemoizationPolicy
+    max_history: 4
+  - name: TEDPolicy
+    max_history: 4
+    random_seed: 1
+    epochs: 200
+  - name: TwoStageFallbackPolicy 
+    nlu_threshold: 0.3
+    ambiguity_threshold: 0.1
+    core_threshold: 0.3
+    falback_core_action_name: 'action_default_fallback'
+    falback_nlu_action_name: 'action_default_fallback'
+    deny_suggestion_intent_name: 'out_of_scope'
+  - name: FormPolicy

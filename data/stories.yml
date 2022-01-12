@@ -1,0 +1,35 @@
+version: "2.0"
+stories:
+- story: greet
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: goodbye
+  steps:
+  - intent: bye
+  - action: utter_goodbye
+
+- story: Happy path usual
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_usual_reminder
+  - slot_was_set:
+    - txt_reminder: "do the homework"
+    - timer: 5
+  - action: usual_reminder_form
+  - active_loop: usual_reminder_form
+  - active_loop: null
+
+- story: Happy path call
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_call_reminder
+  - slot_was_set:
+    - txt_reminder: "John"
+    - timer: 5
+  - action: call_reminder_form
+  - active_loop: call_reminder_form
+  - active_loop: null
